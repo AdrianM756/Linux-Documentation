@@ -44,6 +44,7 @@ iptables -A INPUT -s <IP ADDRESS> -p TCP --dport 22 -j DROP
 
 ```-j``` refers to the action of the rule in this case is ```DROP```.
 <br>
+<br>
 
 ## Deleting a Rule
 
