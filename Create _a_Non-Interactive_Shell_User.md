@@ -9,14 +9,18 @@ Non-Interactive Shell User means setting up an account that can’t log in to a 
 <br>
 <br>
 
-To Create a user with non-interactive shell, we can use the command:
-<br>
+<details>
+<summary>To Create a user with non-interactive shell, we can use the command:</summary>
+
 ```
 sudo useradd -s /sbin/nologin <USERNAME>
 ```
-<br>
+
+</details>
 
 *Explaination:*
+<details>
+<summary></summary>
 
 * ```sudo``` Runs the command with superuser (admin) privileges.
 
@@ -25,32 +29,33 @@ sudo useradd -s /sbin/nologin <USERNAME>
 * ```-s``` or ```--shell``` refers to the name of the user's login shell. 
 
 * ```/sbin/nologin``` Sets the user's login shell to ```/sbin/nologin```. By setting the shell to ```/sbin/nologin```, you're telling the system that this user should not be allowed to log in interactively.
-<br>
-<br>
+</details>
 
 ## Verify if a user in Non-Interactive Shell
+<details>
+<summary>To verify that a user is in Non-Interactive shell, we can use the command:</summary>
 
-To verify that a user is in Non-Interactive shell, we can use the command:
-<br>
 ```
 cat /etc/passwd | grep <USERNAME>
 ```
+</details>
 <br>
 
-You will then have this similar output:
-<br>
+<details>
+<summary>You will then have this similar output:</summary>
+  
 ```
 username:x:1001:1001::/home/username:/sbin/nologin
 ```
-<br>
-<br>
+</details>
 
-An alternative way is to use the [getent](https://man7.org/linux/man-pages/man1/getent.1.html) command:
-<br>
+## getent
+
+An alternative way is to use the</summary> [getent](https://man7.org/linux/man-pages/man1/getent.1.html) command:<details><summary></summary>  
 ```
 getent passwd <USERNAME>
 ```
-<br>
+</details>
 
 This will return the same line from ```/etc/passwd``` and you can inspect the shell at the end.
 <br>
